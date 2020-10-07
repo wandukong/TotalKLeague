@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_club"
+        android:icon="@drawable/ic_ondemand_video_24"
+        android:title="@string/club"/>
+    <item android:id="@+id/menu_rank"
+        android:icon="@drawable/ic_list_numbered_24"
+        android:title="@string/rank"/>
+    <item android:id="@+id/menu_plan"
+        android:icon="@drawable/ic_calendar_today_24"
+        android:title="@string/plan"/>
+</menu>
