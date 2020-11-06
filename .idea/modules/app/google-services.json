@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1012123489615",
+    "firebase_url": "https://totalkleague.firebaseio.com",
+    "project_id": "totalkleague",
+    "storage_bucket": "totalkleague.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012123489615:android:f7671496de95f47b3a613a",
+        "android_client_info": {
+          "package_name": "com.example.totalkleauge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012123489615-odefhf2i6ol5u95rc62c7ek3r927j6h0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.totalkleauge",
+            "certificate_hash": "cc9d289619114352f5bb9443fa3aeda59768fe74"
+          }
+        },
+        {
+          "client_id": "1012123489615-l1gjm4mbekg04al3l9d45kpjrtqouiq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZR0yLHZtGS6QMQFM3Fo2A6uaS9e2L-5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012123489615-l1gjm4mbekg04al3l9d45kpjrtqouiq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
