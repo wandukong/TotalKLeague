@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder> {
@@ -34,7 +33,7 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder
     @Override
     public void onBindViewHolder(@NonNull PlanViewHolder holder, int position) {
 
-        holder.tvRound.setText(planList.get(position).getRound());
+        holder.tvRound.setText(String.valueOf(planList.get(position).getRound()));
         holder.tvDate.setText(planList.get(position).getDate());
         holder.tvTime.setText(planList.get(position).getTime());
         holder.tvHome.setText(planList.get(position).getHome());
@@ -72,76 +71,76 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder
     }
 
     private void setHomeLogo(ImageView imageView, int pos){
-        if(planList.get(pos).getHome() == "전북"){
-            imageView.setImageResource(R.id.jeonbuk);
-        }else if(planList.get(pos).getHome() == "울산"){
-            imageView.setImageResource(R.id.ulsan);
-        }else if(planList.get(pos).getHome() == "포항"){
-            imageView.setImageResource(R.id.pohang);
+        if(planList.get(pos).getHome().equals("전북")){
+            imageView.setImageResource(R.drawable.jeonbuk);
+        }else if(planList.get(pos).getHome().equals("울산")){
+            imageView.setImageResource(R.drawable.ulsan);
+        }else if(planList.get(pos).getHome().equals("포항")){
+            imageView.setImageResource(R.drawable.pohang);
         }
-        else if(planList.get(pos).getHome() == "상주"){
-            imageView.setImageResource(R.id.sangju);
+        else if(planList.get(pos).getHome().equals("상주")){
+            imageView.setImageResource(R.drawable.sangju);
         }
-        else if(planList.get(pos).getHome() == "대구"){
-            imageView.setImageResource(R.id.daegu);
+        else if(planList.get(pos).getHome().equals("대구")){
+            imageView.setImageResource(R.drawable.daegu);
         }
-        else if(planList.get(pos).getHome() == "광주"){
-            imageView.setImageResource(R.id.gwangju);
+        else if(planList.get(pos).getHome().equals("광주")){
+            imageView.setImageResource(R.drawable.gwangju);
         }
-        else if(planList.get(pos).getHome() == "강원"){
-            imageView.setImageResource(R.id.gangwon);
+        else if(planList.get(pos).getHome().equals("강원")){
+            imageView.setImageResource(R.drawable.gangwon);
         }
-        else if(planList.get(pos).getHome() == "수원"){
-            imageView.setImageResource(R.id.suwon);
+        else if(planList.get(pos).getHome().equals("수원")){
+            imageView.setImageResource(R.drawable.suwon);
         }
-        else if(planList.get(pos).getHome() == "서울"){
-            imageView.setImageResource(R.id.seoul);
+        else if(planList.get(pos).getHome().equals("서울")){
+            imageView.setImageResource(R.drawable.seoul);
         }
-        else if(planList.get(pos).getHome() == "성남"){
-            imageView.setImageResource(R.id.seongnam);
+        else if(planList.get(pos).getHome().equals("성남")){
+            imageView.setImageResource(R.drawable.seongnam);
         }
-        else if(planList.get(pos).getHome() == "인천"){
-            imageView.setImageResource(R.id.incheon);
+        else if(planList.get(pos).getHome().equals("인천")){
+            imageView.setImageResource(R.drawable.incheon);
         }
-        else if(planList.get(pos).getHome() == "부산"){
-            imageView.setImageResource(R.id.busan);
+        else if(planList.get(pos).getHome().equals("부산")){
+            imageView.setImageResource(R.drawable.busan);
         }
     }
 
     private void setAwayLogo(ImageView imageView, int pos) {
-        if(planList.get(pos).getAway() == "전북"){
-            imageView.setImageResource(R.id.jeonbuk);
-        }else if(planList.get(pos).getAway() == "울산"){
-            imageView.setImageResource(R.id.ulsan);
-        }else if(planList.get(pos).getAway() == "포항"){
-            imageView.setImageResource(R.id.pohang);
+        if(planList.get(pos).getAway().equals("전북")){
+            imageView.setImageResource(R.drawable.jeonbuk);
+        }else if(planList.get(pos).getAway().equals("울산")){
+            imageView.setImageResource(R.drawable.ulsan);
+        }else if(planList.get(pos).getAway().equals("포항")){
+            imageView.setImageResource(R.drawable.pohang);
         }
-        else if(planList.get(pos).getAway() == "상주"){
-            imageView.setImageResource(R.id.sangju);
+        else if(planList.get(pos).getAway().equals("상주")){
+            imageView.setImageResource(R.drawable.sangju);
         }
-        else if(planList.get(pos).getAway() == "대구"){
-            imageView.setImageResource(R.id.daegu);
+        else if(planList.get(pos).getAway().equals("대구")){
+            imageView.setImageResource(R.drawable.daegu);
         }
-        else if(planList.get(pos).getAway() == "광주"){
-            imageView.setImageResource(R.id.gwangju);
+        else if(planList.get(pos).getAway().equals("광주")){
+            imageView.setImageResource(R.drawable.gwangju);
         }
-        else if(planList.get(pos).getAway() == "강원"){
-            imageView.setImageResource(R.id.gangwon);
+        else if(planList.get(pos).getAway().equals("강원")){
+            imageView.setImageResource(R.drawable.gangwon);
         }
-        else if(planList.get(pos).getAway() == "수원"){
-            imageView.setImageResource(R.id.suwon);
+        else if(planList.get(pos).getAway().equals("수원")){
+            imageView.setImageResource(R.drawable.suwon);
         }
-        else if(planList.get(pos).getAway() == "서울"){
-            imageView.setImageResource(R.id.seoul);
+        else if(planList.get(pos).getAway().equals("서울")){
+            imageView.setImageResource(R.drawable.seoul);
         }
-        else if(planList.get(pos).getAway() == "성남"){
-            imageView.setImageResource(R.id.seongnam);
+        else if(planList.get(pos).getAway().equals("성남")){
+            imageView.setImageResource(R.drawable.seongnam);
         }
-        else if(planList.get(pos).getAway() == "인천"){
-            imageView.setImageResource(R.id.incheon);
+        else if(planList.get(pos).getAway().equals("인천")){
+            imageView.setImageResource(R.drawable.incheon);
         }
-        else if(planList.get(pos).getAway() == "부산"){
-            imageView.setImageResource(R.id.busan);
+        else if(planList.get(pos).getAway().equals("부산")){
+            imageView.setImageResource(R.drawable.busan);
         }
     }
 
