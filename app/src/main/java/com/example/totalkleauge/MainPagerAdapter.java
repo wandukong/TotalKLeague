@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.totalkleauge.club.ClubFragment;
+import com.example.totalkleauge.rank.RankFragment;
 
 public class MainPagerAdapter extends FragmentStatePagerAdapter {
     public MainPagerAdapter(FragmentManager fm) {super(fm);}
