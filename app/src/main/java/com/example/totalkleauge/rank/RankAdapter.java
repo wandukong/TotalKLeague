@@ -46,7 +46,6 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHodler
         TextView tvWin;
         TextView tvDraw;
         TextView tvLose;
-        TextView tvPlus;
         TextView tvEqual;
         TextView tvPoint;
 
@@ -59,7 +58,6 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHodler
              tvWin = itemView.findViewById(R.id.tv_win);
              tvDraw = itemView.findViewById(R.id.tv_draw);
              tvLose = itemView.findViewById(R.id.tv_lose);
-             tvPlus = itemView.findViewById(R.id.tv_plus);
              tvEqual = itemView.findViewById(R.id.tv_equal);
              tvPoint = itemView.findViewById(R.id.tv_point);
 
@@ -73,7 +71,6 @@ public class RankAdapter extends RecyclerView.Adapter<RankAdapter.RankViewHodler
             tvWin.setText(rank.getWin());
             tvDraw.setText(rank.getDraw());
             tvLose.setText(rank.getLose());
-            tvPlus.setText(rank.getPlus());
             tvEqual.setText(rank.getEqual());
             tvPoint.setText(rank.getPoint());
 
