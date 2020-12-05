@@ -24,6 +24,7 @@
 
         <TextView
             android:id="@+id/OwnIP"
+            android:includeFontPadding="false"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_width="0dp"
@@ -33,13 +34,11 @@
 
         <EditText
             android:id="@+id/editPeerIP"
-            app:layout_constraintTop_toBottomOf="@id/OwnIP"
-            app:layout_constraintStart_toStartOf="@id/OwnIP"
-            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="editPeerIP"
-            />
+            app:layout_constraintStart_toStartOf="@id/OwnIP"
+            app:layout_constraintTop_toBottomOf="@id/OwnIP" />
 
         <EditText
             android:id="@+id/input_message"

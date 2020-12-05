@@ -17,6 +17,8 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Enumeration;
 
 public class VideoActivity extends AppCompatActivity {
@@ -34,6 +36,10 @@ public class VideoActivity extends AppCompatActivity {
     private ListView mConversationView;
     private DatagramSocket send_socket;
     TextView OwnIP;
+
+    SimpleDateFormat format = new SimpleDateFormat ( "HH:mm");
+    Date time1 = new Date();
+    String time = format.format(time1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +98,7 @@ public class VideoActivity extends AppCompatActivity {
                     VideoActivity.this.runOnUiThread(new Runnable() { // 메세지 전송
                         @Override
                         public void run() {
-                            mConversationArrayAdapter.add("Sending from " + getIpAddress().trim() + " : " + inputMessage.getText().toString());
+                            mConversationArrayAdapter.add(time + " 포로리 : " + inputMessage.getText().toString());
                         }
                     });
 
@@ -157,13 +163,14 @@ public class VideoActivity extends AppCompatActivity {
                     VideoActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            mConversationArrayAdapter.add("Message from " + sourceIP + " : " + receive_data);
+                            mConversationArrayAdapter.add(time+ " 보노보노 : "+ receive_data);
                         }
                     });
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
         }
     }
 
