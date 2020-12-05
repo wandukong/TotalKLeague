@@ -1,13 +1,60 @@
 package com.example.totalkleauge;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "plan")
 public class Plan {
 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    @ColumnInfo(name="round")
+    private int round;
+    @ColumnInfo(name="date")
+    private String date;
+    @ColumnInfo(name="time")
+    private String time;
+    @ColumnInfo(name="home")
     private String home;
-    private String homeImage;
+    @ColumnInfo(name="home_score")
     private String homeScore;
+    @ColumnInfo(name="away")
     private String away;
-    private String awayImage;
+    @ColumnInfo(name="away_score")
     private String awayScore;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getRound() {
+        return round;
+    }
+
+    public void setRound(int round) {
+        this.round = round;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public String getHome() {
         return home;
@@ -15,14 +62,6 @@ public class Plan {
 
     public void setHome(String home) {
         this.home = home;
-    }
-
-    public String getHomeImage() {
-        return homeImage;
-    }
-
-    public void setHomeImage(String homeImage) {
-        this.homeImage = homeImage;
     }
 
     public String getHomeScore() {
@@ -41,19 +80,25 @@ public class Plan {
         this.away = away;
     }
 
-    public String getAwayImage() {
-        return awayImage;
-    }
-
-    public void setAwayImage(String awayImage) {
-        this.awayImage = awayImage;
-    }
-
     public String getAwayScore() {
         return awayScore;
     }
 
     public void setAwayScore(String awayScore) {
         this.awayScore = awayScore;
+    }
+
+    @Override
+    public String toString() {
+        return "Plan{" +
+                "id=" + id +
+                ", round=" + round +
+                ", date='" + date + '\'' +
+                ", time='" + time + '\'' +
+                ", home='" + home + '\'' +
+                ", homeScore='" + homeScore + '\'' +
+                ", away='" + away + '\'' +
+                ", awayScore='" + awayScore + '\'' +
+                '}';
     }
 }
