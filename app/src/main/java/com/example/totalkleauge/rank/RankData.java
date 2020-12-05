@@ -8,11 +8,10 @@ public class RankData {
     String win;
     String draw;
     String lose;
-    String plus;
     String equal;
     String point;
 
-    public RankData(String number, int team_image, String team_name, String match, String win, String draw, String lose, String plus,
+    public RankData(String number, int team_image, String team_name, String match, String win, String draw, String lose,
             String equal, String point)
     {
         this.number = number;
@@ -22,7 +21,6 @@ public class RankData {
         this.win = win;
         this.draw = draw;
         this.lose = lose;
-        this.plus = plus;
         this.equal = equal;
         this.point = point;
     }
@@ -47,9 +45,6 @@ public class RankData {
 
     public String getLose() {return lose;}
     public void setLose(String lose) {this.lose = lose;}
-
-    public String getPlus() {return plus;}
-    public void setPlus(String plus) {this.plus = plus;}
 
     public String getEqual() {return equal;}
     public void setEqual(String equal) {this.equal = equal;}
