@@ -33,7 +33,7 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder
     @Override
     public void onBindViewHolder(@NonNull PlanViewHolder holder, int position) {
 
-        holder.tvRound.setText(String.valueOf(planList.get(position).getRound()));
+        holder.tvRound.setText("Round "+String.valueOf(planList.get(position).getRound()));
         holder.tvDate.setText(planList.get(position).getDate());
         holder.tvTime.setText(planList.get(position).getTime());
         holder.tvHome.setText(planList.get(position).getHome());
