@@ -1,18 +1,12 @@
 package com.example.totalkleauge;
 
 import android.util.Log;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.totalkleauge.planfragment.Plan05Fragment;
-import com.example.totalkleauge.planfragment.Plan06Fragment;
-import com.example.totalkleauge.planfragment.Plan07Fragment;
-
-import java.util.ArrayList;
+import com.example.totalkleauge.club.ClubFragment;
 
 public class MainPagerAdapter extends FragmentStatePagerAdapter {
     public MainPagerAdapter(FragmentManager fm) {super(fm);}
