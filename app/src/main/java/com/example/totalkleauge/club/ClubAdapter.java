@@ -1,5 +1,7 @@
 package com.example.totalkleauge.club;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +11,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.totalkleauge.HomeActivity;
 import com.example.totalkleauge.R;
+import com.example.totalkleauge.VideoActivity;
 
 import java.util.ArrayList;
 
 public class ClubAdapter extends RecyclerView.Adapter<ClubAdapter.ClubViewHolder> {
     ArrayList<ClubData> clubData = new ArrayList<>();
+
+
 
     @NonNull
     @Override
@@ -52,6 +58,14 @@ public class ClubAdapter extends RecyclerView.Adapter<ClubAdapter.ClubViewHolder
         void bind(ClubData club) {
             imgLogo.setImageResource(club.getLogo());
             tvName.setText(club.getClubName());
+
+            imgLogo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(view.getContext(), VideoActivity.class);
+                    view.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }
