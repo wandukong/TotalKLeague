@@ -6,7 +6,7 @@
     tools:context=".planfragment.Plan10Fragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_plan05"
+        android:id="@+id/recyclerView_plan10"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
