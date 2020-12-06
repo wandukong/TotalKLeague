@@ -24,6 +24,7 @@
         app:layout_constraintTop_toBottomOf="@id/videoView"
         android:text="PLAY"
         android:textColor="@color/white"
+        android:fontFamily="@font/black_han_sans"
         android:background="@drawable/btn_background"/>
 
     <Button
@@ -35,6 +36,7 @@
         app:layout_constraintTop_toBottomOf="@id/videoView"
         android:text="PAUSE"
         android:textColor="@color/white"
+        android:fontFamily="@font/black_han_sans"
         android:background="@drawable/btn_background"/>
 
     <Button
@@ -46,6 +48,7 @@
         app:layout_constraintTop_toBottomOf="@id/videoView"
         android:text="STOP"
         android:textColor="@color/white"
+        android:fontFamily="@font/black_han_sans"
         android:background="@drawable/btn_background"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -71,6 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="상대방의 닉네임을 입력하세요."
+            android:fontFamily="@font/black_han_sans"
             app:layout_constraintStart_toStartOf="@id/OwnIP"
             app:layout_constraintTop_toBottomOf="@id/OwnIP" />
 
@@ -80,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="메시지를 입력하세요."
+            android:fontFamily="@font/black_han_sans"
             app:layout_constraintTop_toBottomOf="@id/editPeerIP"
             app:layout_constraintStart_toStartOf="@id/editPeerIP"
             app:layout_constraintEnd_toEndOf="@id/guideline"/>
@@ -99,6 +104,7 @@
             app:layout_constraintBottom_toBottomOf="@id/input_message"
             app:layout_constraintStart_toEndOf="@id/input_message"
             android:text="전송"
+            android:fontFamily="@font/black_han_sans"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:background="@drawable/btn_background"/>
