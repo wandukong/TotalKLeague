@@ -14,6 +14,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:text="Round 15"
+        android:fontFamily="@font/black_han_sans"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="05.08"
+        android:fontFamily="@font/black_han_sans"
         app:layout_constraintEnd_toEndOf="@+id/tv_round"
         app:layout_constraintStart_toStartOf="@+id/tv_round"
         app:layout_constraintTop_toBottomOf="@+id/tv_round" />
@@ -32,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:text="19:00"
+        android:fontFamily="@font/black_han_sans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/tv_round"
         app:layout_constraintStart_toStartOf="@+id/tv_round"
@@ -46,6 +49,7 @@
         android:gravity="center"
         android:text="전북"
         android:textSize="20sp"
+        android:fontFamily="@font/black_han_sans"
         app:layout_constraintBottom_toBottomOf="@+id/iv_home"
         app:layout_constraintStart_toEndOf="@+id/iv_home"
         app:layout_constraintTop_toTopOf="@+id/iv_home" />
@@ -70,6 +74,7 @@
         android:gravity="center"
         android:text="10"
         android:textSize="20sp"
+        android:fontFamily="@font/black_han_sans"
         app:layout_constraintBottom_toBottomOf="@+id/iv_home"
         app:layout_constraintStart_toEndOf="@+id/tv_home"
         app:layout_constraintTop_toTopOf="@+id/iv_home" />
@@ -80,6 +85,7 @@
         android:layout_height="wrap_content"
         android:text=":"
         android:layout_marginHorizontal="12dp"
+        android:fontFamily="@font/black_han_sans"
         app:layout_constraintBottom_toBottomOf="@+id/tv_homeScore"
         app:layout_constraintStart_toEndOf="@+id/tv_homeScore"
         app:layout_constraintEnd_toStartOf="@+id/tv_awayScore"
@@ -94,6 +100,7 @@
         android:gravity="center"
         android:text="10"
         android:textSize="20sp"
+        android:fontFamily="@font/black_han_sans"
         app:layout_constraintBottom_toBottomOf="@+id/iv_away"
         app:layout_constraintEnd_toStartOf="@+id/tv_away"
         app:layout_constraintTop_toTopOf="@+id/iv_away" />
@@ -107,6 +114,7 @@
         android:gravity="center"
         android:text="수원"
         android:textSize="20sp"
+        android:fontFamily="@font/black_han_sans"
         app:layout_constraintBottom_toBottomOf="@+id/iv_away"
         app:layout_constraintEnd_toStartOf="@+id/iv_away"
         app:layout_constraintTop_toTopOf="@+id/iv_away" />
