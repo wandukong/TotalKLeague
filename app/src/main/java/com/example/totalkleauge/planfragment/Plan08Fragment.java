@@ -41,7 +41,7 @@ public class Plan08Fragment extends Fragment {
                 .allowMainThreadQueries()
                 .build();
 
-        planList = db.planDao().getPlan("08");
+        planList = db.planDao().getPlan("8");
 
         recyclerView = view.findViewById(R.id.recyclerView_plan08);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
