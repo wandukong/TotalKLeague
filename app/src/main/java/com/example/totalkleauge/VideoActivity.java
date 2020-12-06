@@ -38,6 +38,7 @@ public class VideoActivity extends AppCompatActivity {
     private ArrayAdapter<String> mConversationArrayAdapter;
     private ListView mConversationView;
     private DatagramSocket send_socket;
+    Uri uri;
     TextView OwnIP;
 
     SimpleDateFormat format = new SimpleDateFormat ( "HH:mm");
@@ -61,7 +62,13 @@ public class VideoActivity extends AppCompatActivity {
         startButton.setOnClickListener(startP2PSend);
 
         final VideoView videoView = (VideoView) findViewById(R.id.videoView);
-        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/raw/seoulincheon");
+        String clubName = getIntent().getStringExtra("club");
+        Log.e("asd",clubName);
+        if(clubName.equals("FC서울")){
+            uri = Uri.parse("android.resource://" + getPackageName() + "/raw/seoulincheon");
+        }else{
+            uri = Uri.parse("android.resource://" + getPackageName() + "/raw/ulsanjeonbuk");
+        }
 
         Button playBtn = findViewById(R.id.btnPlay);
         Button pauseBtn = findViewById(R.id.btnPause);
@@ -136,7 +143,11 @@ public class VideoActivity extends AppCompatActivity {
                     VideoActivity.this.runOnUiThread(new Runnable() { // 메세지 전송
                         @Override
                         public void run() {
-                            mConversationArrayAdapter.add(time + " 포로리 : " + inputMessage.getText().toString());
+                            if(editPeerIP.getText().toString().equals("172.20.10.2"))
+                                mConversationArrayAdapter.add(time + " 포로리 : " + inputMessage.getText().toString());
+                            else{
+                                mConversationArrayAdapter.add(time + " 보노보노 : " + inputMessage.getText().toString());
+                            }
                         }
                     });
 
@@ -201,7 +212,11 @@ public class VideoActivity extends AppCompatActivity {
                     VideoActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            mConversationArrayAdapter.add(time+ " 보노보노 : "+ receive_data);
+                            if(sourceIP.equals("172.20.10.2"))
+                                mConversationArrayAdapter.add(time+ " 보노보노 : "+ receive_data);
+                            else{
+                                mConversationArrayAdapter.add(time+ " 포로리 : "+ receive_data);
+                            }
                         }
                     });
                 }
