@@ -11,9 +11,12 @@
         android:id="@+id/tl_plan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/black_han_sans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextAppearance="@style/tab_text"/>
 
 
     <androidx.viewpager.widget.ViewPager

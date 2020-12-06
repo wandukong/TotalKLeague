@@ -1,7 +1,7 @@
 package com.example.totalkleauge;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.VideoView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -35,6 +38,7 @@ public class VideoActivity extends AppCompatActivity {
     private ArrayAdapter<String> mConversationArrayAdapter;
     private ListView mConversationView;
     private DatagramSocket send_socket;
+    Uri uri;
     TextView OwnIP;
 
     SimpleDateFormat format = new SimpleDateFormat ( "HH:mm");
@@ -57,6 +61,20 @@ public class VideoActivity extends AppCompatActivity {
         mConversationView.setAdapter(mConversationArrayAdapter);
         startButton.setOnClickListener(startP2PSend);
 
+        final VideoView videoView = (VideoView) findViewById(R.id.videoView);
+        String clubName = getIntent().getStringExtra("club");
+        Log.e("asd",clubName);
+        if(clubName.equals("FC서울")){
+            uri = Uri.parse("android.resource://" + getPackageName() + "/raw/seoulincheon");
+        }else{
+            uri = Uri.parse("android.resource://" + getPackageName() + "/raw/ulsanjeonbuk");
+        }
+
+        Button playBtn = findViewById(R.id.btnPlay);
+        Button pauseBtn = findViewById(R.id.btnPause);
+        Button stopBtn = findViewById(R.id.btnStop);
+
+
         Thread startReceiveThread = new Thread(new StartReceiveThread()); // 서버 역할을 하기 위해 실행
         startReceiveThread.start();
 
@@ -66,9 +84,36 @@ public class VideoActivity extends AppCompatActivity {
             Log.e("VR", "Sender SocketException");
         }
 
+        videoView.setVideoURI(uri);
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                // 준비 완료되면 비디오 재생
+                mp.start();
+            }
+        });
 
+        playBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                videoView.start();
+            }
+        });
 
+        pauseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                videoView.pause();
+            }
+        });
 
+        stopBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                videoView.stopPlayback();
+                videoView.setVideoURI(null);
+            }
+        });
     }
     private final View.OnClickListener startP2PSend = new View.OnClickListener() {
         @Override
@@ -98,7 +143,11 @@ public class VideoActivity extends AppCompatActivity {
                     VideoActivity.this.runOnUiThread(new Runnable() { // 메세지 전송
                         @Override
                         public void run() {
-                            mConversationArrayAdapter.add(time + " 포로리 : " + inputMessage.getText().toString());
+                            if(editPeerIP.getText().toString().equals("172.20.10.2"))
+                                mConversationArrayAdapter.add(time + " 포로리 : " + inputMessage.getText().toString());
+                            else{
+                                mConversationArrayAdapter.add(time + " 보노보노 : " + inputMessage.getText().toString());
+                            }
                         }
                     });
 
@@ -163,7 +212,11 @@ public class VideoActivity extends AppCompatActivity {
                     VideoActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            mConversationArrayAdapter.add(time+ " 보노보노 : "+ receive_data);
+                            if(sourceIP.equals("172.20.10.2"))
+                                mConversationArrayAdapter.add(time+ " 보노보노 : "+ receive_data);
+                            else{
+                                mConversationArrayAdapter.add(time+ " 포로리 : "+ receive_data);
+                            }
                         }
                     });
                 }
