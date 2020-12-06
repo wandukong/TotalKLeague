@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,24 +20,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnPause"
         app:layout_constraintTop_toBottomOf="@id/videoView"
-        android:text="PLAY"/>
+        android:text="PLAY"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_background"/>
 
     <Button
         android:id="@+id/btnPause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/btnPlay"
+        app:layout_constraintEnd_toStartOf="@id/btnStop"
         app:layout_constraintTop_toBottomOf="@id/videoView"
-        android:text="PAUSE"/>
+        android:text="PAUSE"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_background"/>
 
     <Button
         android:id="@+id/btnStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/btnPause"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/videoView"
-        android:text="STOP"/>
+        android:text="STOP"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_background"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
@@ -60,27 +70,38 @@
             android:id="@+id/editPeerIP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="editPeerIP"
+            android:hint="상대방의 닉네임을 입력하세요."
             app:layout_constraintStart_toStartOf="@id/OwnIP"
             app:layout_constraintTop_toBottomOf="@id/OwnIP" />
 
         <EditText
             android:id="@+id/input_message"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="메시지를 입력하세요."
             app:layout_constraintTop_toBottomOf="@id/editPeerIP"
             app:layout_constraintStart_toStartOf="@id/editPeerIP"
-            android:hint="input_message" />
+            app:layout_constraintEnd_toEndOf="@id/guideline"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8"/>
 
         <Button
             android:id="@+id/start_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/input_message"
-            app:layout_constraintStart_toStartOf="@id/input_message"
-            android:text="START P2P Chat"
-            tools:layout_editor_absoluteX="-16dp"
-            tools:layout_editor_absoluteY="140dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/input_message"
+            app:layout_constraintBottom_toBottomOf="@id/input_message"
+            app:layout_constraintStart_toEndOf="@id/input_message"
+            android:text="전송"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:background="@drawable/btn_background"/>
 
         <ListView
             android:id="@+id/listView1"
