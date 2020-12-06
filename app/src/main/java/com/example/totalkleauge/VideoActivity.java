@@ -2,6 +2,8 @@ package com.example.totalkleauge;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -57,6 +60,14 @@ public class VideoActivity extends AppCompatActivity {
         mConversationView.setAdapter(mConversationArrayAdapter);
         startButton.setOnClickListener(startP2PSend);
 
+        final VideoView videoView = (VideoView) findViewById(R.id.videoView);
+        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/raw/seoulincheon");
+
+        Button playBtn = findViewById(R.id.btnPlay);
+        Button pauseBtn = findViewById(R.id.btnPause);
+        Button stopBtn = findViewById(R.id.btnStop);
+
+
         Thread startReceiveThread = new Thread(new StartReceiveThread()); // 서버 역할을 하기 위해 실행
         startReceiveThread.start();
 
@@ -66,9 +77,36 @@ public class VideoActivity extends AppCompatActivity {
             Log.e("VR", "Sender SocketException");
         }
 
+        videoView.setVideoURI(uri);
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                // 준비 완료되면 비디오 재생
+                mp.start();
+            }
+        });
 
+        playBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                videoView.start();
+            }
+        });
 
+        pauseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                videoView.pause();
+            }
+        });
 
+        stopBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                videoView.stopPlayback();
+                videoView.setVideoURI(null);
+            }
+        });
     }
     private final View.OnClickListener startP2PSend = new View.OnClickListener() {
         @Override
